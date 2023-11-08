@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/puat_ah/static/css/main.0176b81d.css",
+    "main.js": "/puat_ah/static/js/main.0ae9c40e.js",
+    "static/js/787.7dcee882.chunk.js": "/puat_ah/static/js/787.7dcee882.chunk.js",
+    "index.html": "/puat_ah/index.html",
+    "main.0176b81d.css.map": "/puat_ah/static/css/main.0176b81d.css.map",
+    "main.0ae9c40e.js.map": "/puat_ah/static/js/main.0ae9c40e.js.map",
+    "787.7dcee882.chunk.js.map": "/puat_ah/static/js/787.7dcee882.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0176b81d.css",
+    "static/js/main.0ae9c40e.js"
+  ]
+}

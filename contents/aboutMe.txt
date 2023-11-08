@@ -1,0 +1,5 @@
+Hello, I'm [Your Name].
+I'm a passionate developer and technology enthusiast.
+I love to create web applications and explore new technologies.
+This is a basic React website I've built using text files for content.
+Feel free to edit this file to update the content on the "About Me" page.
