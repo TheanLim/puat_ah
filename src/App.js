@@ -21,7 +21,7 @@ import Catchphrase from './Catchphrase';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/puat_ah">
       <Tabs />
       <Routes>
         <Route path="/about" element={<AboutMe />} />
