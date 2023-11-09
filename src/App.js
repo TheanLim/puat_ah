@@ -10,6 +10,7 @@ function App() {
     <Router basename="/puat_ah">
       <Tabs />
       <Routes>
+        <Route path="/" element={<AboutMe />} />
         <Route path="/about" element={<AboutMe />} />
         <Route path="/jokes" element={<Jokes />} />
         <Route path="/catchphrase" element={<Catchphrase />} />

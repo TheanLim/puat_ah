@@ -1,9 +1,11 @@
 import React from 'react';
-import Content from './Content';
+import GoogleDocsContent from './GoogleDocsContent';
 
 function Jokes() {
   return (
-    <Content filePath=".\contents\jokes.txt" title="Jokes" />
+    <div className="container">
+      <GoogleDocsContent docId = "1uncrDkxdHR6GZYf-K3277StNrgli_WlpX_XQXMMzlMo" title="Jokes"/>
+    </div>
   );
 }
 

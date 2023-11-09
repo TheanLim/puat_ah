@@ -1,9 +1,11 @@
 import React from 'react';
-import Content from './Content';
+import GoogleDocsContent from './GoogleDocsContent';
 
 function Catchphrase() {
   return (
-    <Content filePath=".\contents\catchphrase.txt" title="Personal Catchphrase" />
+    <div className="container">
+      <GoogleDocsContent docId = "1LnFy72hmo379jNeGZbwtDWQ34QBAl6Wg33N9Q5peOxE" title="Personal Catchphrase"/>
+    </div>
   );
 }
 
