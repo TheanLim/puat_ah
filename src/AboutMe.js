@@ -3,7 +3,7 @@ import Content from './Content';
 
 function AboutMe() {
   return (
-    <Content filePath="/contents/aboutMe.txt" title="About Me" />
+    <Content filePath=".\contents\aboutMe.txt" title="About Me" />
   );
 }
 

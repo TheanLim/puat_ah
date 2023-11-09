@@ -3,7 +3,7 @@ import Content from './Content';
 
 function Catchphrase() {
   return (
-    <Content filePath="/contents/catchphrase.txt" title="Personal Catchphrase" />
+    <Content filePath=".\contents\catchphrase.txt" title="Personal Catchphrase" />
   );
 }
 

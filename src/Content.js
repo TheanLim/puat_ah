@@ -10,11 +10,11 @@ function Content({ filePath, title }) {
         headers.append('Accept', 'text/plain'); // Specify the content type as plain text
 
         const response = await fetch(filePath, { headers });
-        
+
         if (!response.ok) {
           throw new Error('Failed to fetch content');
         }
-        
+
         const data = await response.text();
         setContent(data);
       } catch (error) {
@@ -28,7 +28,7 @@ function Content({ filePath, title }) {
   return (
     <div>
       <h1>{title}</h1>
-      <p>{content}</p>
+      <p style={{ whiteSpace: 'pre-line' }}>{content}</p> {/* Use white-space: pre-line to preserve newlines */}
     </div>
   );
 }
