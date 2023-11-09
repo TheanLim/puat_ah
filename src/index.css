@@ -14,7 +14,7 @@ code {
 
 .container {
   padding: 20px;
-  max-width: 800px;
+  max-width: 1200px;
   /* margin: 0 auto; */
 }
 
@@ -30,15 +30,19 @@ code {
 
 .gallery {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  flex-wrap: wrap;
   justify-content: space-around;
+  max-width: 1000px; /* Set the maximum width for the gallery */
+  margin: 0 auto;
 }
 
 .gallery img {
-  flex: 1 1 auto; /* Allow items to grow and shrink based on available space */
+  flex: 1 1 auto;
   height: auto;
+  max-width: 100%; /* Set the maximum width for each image */
+  max-height: 300px; /* Set the maximum height for each image */
   margin: 10px;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -46,3 +50,11 @@ code {
   transform: scale(1.1);
 }
 
+/* Additional style for creating a collage effect */
+.gallery img:nth-child(odd) {
+  margin-bottom: 20px; /* Add extra margin to odd-numbered images for a staggered effect */
+}
+
+.gallery img:nth-child(even) {
+  margin-top: 20px; /* Add extra margin to even-numbered images for a staggered effect */
+}
