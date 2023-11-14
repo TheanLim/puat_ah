@@ -2,7 +2,7 @@ name: Generate xml sitemap
 
 on:
   push:
-    branches: [ gh-pages ]
+    branches: [ main ]
 
 jobs:
   sitemap_job:
@@ -14,6 +14,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0 
+        token: ${{ secrets.GH_PAT }}
 
     - name: Generate the sitemap
       id: sitemap
@@ -33,4 +34,4 @@ jobs:
         git config --local user.name "GitHub Action"
         git add ${{ steps.sitemap.outputs.sitemap-path }}
         git commit -m "Add sitemap" -a
-        git push https://${{ secrets.GH_PAT }}@github.com/TheanLim/puat_ah.git
+        git push
