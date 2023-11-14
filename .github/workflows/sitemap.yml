@@ -33,4 +33,4 @@ jobs:
         git config --local user.name "GitHub Action"
         git add ${{ steps.sitemap.outputs.sitemap-path }}
         git commit -m "Add sitemap" -a
-        git push
+        git push https://${{ secrets.GH_PAT }}@github.com/<your-username>/<your-repo>.git
