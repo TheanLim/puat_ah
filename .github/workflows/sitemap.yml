@@ -2,7 +2,7 @@ name: Generate xml sitemap
 
 on:
   push:
-    branches: [ main ]
+    branches: [ gh-pages, main ]
 
 jobs:
   sitemap_job:
@@ -28,28 +28,10 @@ jobs:
         echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
         echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
 
-    - name: Checkout gh-pages branch
-      run: |
-        git fetch origin gh-pages:gh-pages
-        git checkout gh-pages
-
-    - name: Print current directory
-      run: pwd
-
-    - name: List files in current directory
-      run: ls -la
-
-    - name: Print sitemap path
-      run: echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
-
-    - name: Move sitemap to gh-pages branch
-      run: |
-        mv ${{ steps.sitemap.outputs.sitemap-path }} .
-
     - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "Add sitemap"
-        git push origin gh-pages
+        git add ${{ steps.sitemap.outputs.sitemap-path }}
+        git commit -m "Add sitemap" -a
+        git push
