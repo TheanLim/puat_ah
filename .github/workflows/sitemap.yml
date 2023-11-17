@@ -10,35 +10,33 @@ jobs:
     name: Generate a sitemap
 
     steps:
-    - name: Checkout the repo
+    - name: Checkout the main branch
       uses: actions/checkout@v3
       with:
         fetch-depth: 0 
         token: ${{ secrets.GH_PAT }}
+        path: main
 
     - name: Generate the sitemap
       id: sitemap
       uses: cicirello/generate-sitemap@v1
       with:
         base-url-path: https://theanlim.github.io/puat_ah/
-
-    - name: Output stats
-      run: |
-        echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
-        echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
-        echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
+        path-to-root: main
 
     - name: Checkout gh-pages branch
-      run: |
-        git fetch origin gh-pages:gh-pages
-        git checkout gh-pages
+      uses: actions/checkout@v3
+      with:
+        ref: gh-pages
+        path: gh-pages
 
     - name: Move sitemap to gh-pages branch
       run: |
-        mv ${{ steps.sitemap.outputs.sitemap-path }} .
+        cp main/${{ steps.sitemap.outputs.sitemap-path }} gh-pages/
 
     - name: Commit and push changes
       run: |
+        cd gh-pages
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
