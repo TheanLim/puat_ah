@@ -4,10 +4,12 @@ import Tabs from './Tabs';
 import AboutMe from './AboutMe';
 import Jokes from './Jokes';
 import Catchphrase from './Catchphrase';
+import BackgroundMusic from './BackgroundMusic';
 
 function App() {
   return (
     <Router basename="/puat_ah">
+      <BackgroundMusic folderId="196Zc5K6AQTA_J-SPvSRzO_DFZ1aXUvJy" />
       <Tabs />
       <Routes>
         <Route path="/" element={<AboutMe />} />
